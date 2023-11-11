@@ -1,4 +1,4 @@
-package my_project.src.main.java.edu.neu.mgen;
+package edu.neu.mgen;
 import java.util.Scanner;
 
 public class HelloWorld {
