@@ -1,4 +1,5 @@
 package edu.neu.mgen;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,32 +18,9 @@ public class hw9_Student {
     }
 
     // Getters and Setters for the Student class
-    public String getStudentId() {
-        return studentId; // Return student's ID
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId; // Set a new student ID
-    }
-
-    public String getFirstName() {
-        return firstName; // Return student's first name
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName; // Set a new first name
-    }
-
-    public String getLastName() {
-        return lastName; // Return student's last name
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName; // Set a new last name
-    }
+    // ... [rest of the getters and setters]
 
     // Method to return a string representation of a Student object
-    
     @Override
     public String toString() {
         return "hw9_Student{" +
@@ -51,7 +29,6 @@ public class hw9_Student {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
-
 }
 
 // Define the EngClass class
@@ -84,5 +61,34 @@ class EngClass {
         for (hw9_Student student : students) {
             System.out.println(student); // Print the details of each student
         }
+    }
+}
+
+// Define the Main class with the main method
+public class Main {
+    public static void main(String[] args) {
+        // Create instances of hw9_Student
+        hw9_Student student1 = new hw9_Student("001", "John", "Doe");
+        hw9_Student student2 = new hw9_Student("002", "Jane", "Smith");
+        hw9_Student student3 = new hw9_Student("003", "Alice", "Johnson");
+
+        // Create an instance of EngClass
+        EngClass engClass = new EngClass();
+
+        // Add students to the EngClass
+        engClass.addStudent(student1);
+        engClass.addStudent(student2);
+        engClass.addStudent(student3);
+
+        // Display the list of students
+        System.out.println("Students in the engineering class:");
+        engClass.displayStudents();
+
+        // Remove a student from the EngClass
+        engClass.deleteStudent("002");
+
+        // Display the list of students after deletion
+        System.out.println("\nStudents in the engineering class after deleting Jane Smith:");
+        engClass.displayStudents();
     }
 }
